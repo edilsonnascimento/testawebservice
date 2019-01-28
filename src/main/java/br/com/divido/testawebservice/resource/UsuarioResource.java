@@ -1,6 +1,10 @@
 package br.com.divido.testawebservice.resource;
 
+import br.com.divido.testawebservice.dao.UsuarioDAO;
 import br.com.divido.testawebservice.model.Usuario;
+
+import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -21,28 +25,33 @@ public class UsuarioResource {
     @Context
     private UriInfo context;
 
+    @Inject
+    private UsuarioDAO usuarioDao;
+
     public UsuarioResource() {
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
     public Usuario getJson() {
         Usuario usuario = new Usuario();
         usuario.setNome("PRIMEIRO USUARIO DO SISTEMA");
-        usuario.setIdUsuario(1008574);
         usuario.setDocumentoNacional("6561651516");
-        
+
+        usuarioDao.salvar(usuario);
+
         return usuario;
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("test")
-    public String getString(){
-        
+    public String getString() {
+
         return "TESTA REST";
     }
-    
+
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(String content) {

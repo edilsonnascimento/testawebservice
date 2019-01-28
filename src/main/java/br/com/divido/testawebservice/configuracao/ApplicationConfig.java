@@ -21,5 +21,5 @@ public class ApplicationConfig extends Application {
         resources.add(br.com.divido.testawebservice.resource.EnderecoResource.class);
         resources.add(br.com.divido.testawebservice.resource.UsuarioResource.class);
     }
-    
+
 }

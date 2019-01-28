@@ -1,4 +1,5 @@
 br/com/divido/testawebservice/model/Usuario.class
-br/com/divido/testawebservice/resource/EnderecoResource.class
 br/com/divido/testawebservice/configuracao/ApplicationConfig.class
+br/com/divido/testawebservice/resource/EnderecoResource.class
 br/com/divido/testawebservice/resource/UsuarioResource.class
+br/com/divido/testawebservice/dao/UsuarioDAO.class
