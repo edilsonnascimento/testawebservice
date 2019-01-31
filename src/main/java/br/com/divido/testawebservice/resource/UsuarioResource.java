@@ -2,16 +2,15 @@ package br.com.divido.testawebservice.resource;
 
 import br.com.divido.testawebservice.dao.UsuarioDAO;
 import br.com.divido.testawebservice.model.Usuario;
+import java.util.List;
 
 import javax.inject.Inject;
-import javax.transaction.Transactional;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -20,10 +19,8 @@ import javax.ws.rs.core.MediaType;
  * @author edilson
  */
 @Path("usuario")
+@Produces({MediaType.APPLICATION_JSON})
 public class UsuarioResource {
-
-    @Context
-    private UriInfo context;
 
     @Inject
     private UsuarioDAO usuarioDao;
@@ -32,28 +29,18 @@ public class UsuarioResource {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Transactional
-    public Usuario getJson() {
-        Usuario usuario = new Usuario();
-        usuario.setNome("PRIMEIRO USUARIO DO SISTEMA");
-        usuario.setDocumentoNacional("6561651516");
-
-        usuarioDao.salvar(usuario);
-
-        return usuario;
+    public List<Usuario> getTodosUsuarios() {
+        return usuarioDao.buscaTodosUsuarios();
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("test")
-    public String getString() {
-
-        return "TESTA REST";
+    @Path("{id}")
+    public Usuario getUsuario(@PathParam("id") Integer id) {
+        return usuarioDao.buscaUsuario(id);
     }
 
     @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
+    public void putUsuario(Usuario usuario) {
+        usuarioDao.salvar(usuario);
     }
 }
