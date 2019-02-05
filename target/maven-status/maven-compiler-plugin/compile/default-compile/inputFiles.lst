@@ -3,3 +3,4 @@
 /home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/configuracao/ApplicationConfig.java
 /home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/model/Usuario.java
 /home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/resource/EnderecoResource.java
+/home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/resource/ImportacaoResource.java
