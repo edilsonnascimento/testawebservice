@@ -1,4 +1,5 @@
 /home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/resource/UsuarioResource.java
+/home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/dao/ProcessaDAO.java
 /home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/dao/UsuarioDAO.java
 /home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/configuracao/ApplicationConfig.java
 /home/ednascimento/netBeansProjects/testawebservice/src/main/java/br/com/divido/testawebservice/model/Usuario.java
